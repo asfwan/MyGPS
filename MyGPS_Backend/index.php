@@ -26,10 +26,8 @@ $app->get('/gps/asc',
 	
 $app->get('/gps/mod/:lat/:lng', 
 	function ($lat,$lng) {
-	 	//if(
-	 		Q_("insert into gps_table (key,value) values('LatLng','$lat:$lng')");
-	 	//) 
-	 	echo "OK";
+	 	Q_("insert into gps_table (title,value) values('LatLng','".$lat.",".$lng."')");
+	 	echo "Inserted Lat: $lat and Lng: $lng .... OK";
 	});
 
 
